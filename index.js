@@ -61,6 +61,23 @@ class GestureRecognizer extends Component {
     );
   }
 
+  _validateSwipe(gestureState) {
+    const {
+      detectSwipeUp,
+      detectSwipeDown,
+      detectSwipeLeft,
+      detectSwipeRight
+    } = this.swipeConfig;
+    const swipeDirection = this._getSwipeDirection(gestureState);
+    const { SWIPE_LEFT, SWIPE_RIGHT, SWIPE_UP, SWIPE_DOWN } = swipeDirections;
+    return (
+      (detectSwipeUp && swipeDirection === SWIPE_UP) ||
+      (detectSwipeDown && swipeDirection === SWIPE_DOWN) ||
+      (detectSwipeLeft && swipeDirection === SWIPE_LEFT) ||
+      (detectSwipeRight && swipeDirection === SWIPE_RIGHT)
+    );
+  }
+
   _gestureIsClick(gestureState) {
     return (
       Math.abs(gestureState.dx) < swipeConfig.gestureIsClickThreshold &&

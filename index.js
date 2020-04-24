@@ -14,10 +14,10 @@ const swipeConfig = {
   velocityThreshold: 0.3,
   directionalOffsetThreshold: 80,
   gestureIsClickThreshold: 5,
-  detectSwipeUp: true,
-  detectSwipeDown: true,
-  detectSwipeLeft: true,
-  detectSwipeRight: true
+  detectSwipeUp: false,
+  detectSwipeDown: false,
+  detectSwipeLeft: false,
+  detectSwipeRight: false
 };
 
 function isValidSwipe(
